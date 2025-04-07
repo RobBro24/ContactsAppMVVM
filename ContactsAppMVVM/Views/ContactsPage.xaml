@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:ContactsAppMVVM.Models.ViewModels"
+             xmlns:models="clr-namespace:ContactsAppMVVM.Models"
+             x:DataType="vm:ContactsPageViewModel"
+             x:Class="ContactsAppMVVM.Views.ContactsPage"
+             Title="ContactsPage">
+    <ListView x:Name="Lv"  ItemsSource="{Binding Contacts}" ItemTapped="Lv_ItemSelected" >
+        <ListView.Header>
+            <VerticalStackLayout BackgroundColor="Black" Padding="5">
+                <Label Text="Students" HorizontalOptions="Center" TextColor="AntiqueWhite" FontAttributes="Bold"/>
+            </VerticalStackLayout>
+        </ListView.Header>
+        <ListView.ItemTemplate>
+            <DataTemplate x:DataType="{x:Type models:Contact}">
+                <TextCell Text="{Binding Name}" Detail="{Binding Email}"/>
+            </DataTemplate>
+        </ListView.ItemTemplate>
+    </ListView>
+</ContentPage>

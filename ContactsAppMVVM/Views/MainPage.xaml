@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContactsAppMVVM.MainPage"
+             xmlns:vm="clr-namespace:ContactsAppMVVM.Models.ViewModels"
+             x:DataType="vm:ContactsPageViewModel">
+    <ScrollView>
+        <VerticalStackLayout Padding="10" Spacing="10">
+            <Entry x:Name="Name" Placeholder="Enter Contact Name..." Text="{Binding Contact.Name}"/>
+            <Entry x:Name="Email" Placeholder="Enter Contact Email..." Text="{Binding Contact.Email}"/>
+            <Entry x:Name="PhoneNumber" Placeholder="Enter Contact Phone Number..." Text="{Binding Contact.PhoneNumber}"/>
+            <Entry x:Name="Description" Placeholder="Enter Contact Description..." Text="{Binding Contact.Description}"/>
+            <Button x:Name="saveButton" Text="Save Student" Command="{Binding AddContactCommand}"/>
+            <Button Text="View List" Clicked="ViewClicked"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
