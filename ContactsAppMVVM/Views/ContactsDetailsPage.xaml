@@ -16,6 +16,6 @@
                 </TableSection>
             </TableRoot>
         </TableView>
-        <Button Text="Back" Clicked="Button_Clicked"/>
+        <Button Text="Back" Command="{Binding BackToAddCommand}"/>
     </StackLayout>
 </ContentPage>
